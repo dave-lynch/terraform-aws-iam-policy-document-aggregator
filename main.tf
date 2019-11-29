@@ -22,6 +22,7 @@ data "aws_iam_policy_document" "empty" {
 data "aws_iam_policy_document" "zero" {
   source_json   = data.aws_iam_policy_document.empty.json
   override_json = element(local.policies, 0)
+  statement   = []
 }
 
 data "aws_iam_policy_document" "one" {
